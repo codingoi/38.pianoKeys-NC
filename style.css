@@ -1,8 +1,9 @@
 body{
   margin: 0;
   padding: 0;
-font-family: 'Montserrat', sans-serif;  background-color: #2d3436;
-background-image: linear-gradient(315deg, #2d3436 0%, #000000 74%);
+  font-family: 'Montserrat', sans-serif;        
+  background-color: #2d3436;
+  background-image: linear-gradient(315deg, #2d3436 0%, #000000 74%);
 }
 .title{
   font-size: 36px;
@@ -101,13 +102,14 @@ background-image: linear-gradient(315deg, #2d3436 0%, #000000 74%);
   margin-left: 35px;
 }
 #first-next-line, #second-next-line, #third-next-line, #fourth-next-line{
-  width: 80px;
-  height: 40px;
+  width: 70px;
+  height: 70px;
   font-size: 16px;
   position: absolute;
-  margin-top: 30px;
-  margin-left: 10px;
-  border: none;
+  margin-top: 20px;
+  margin-left: 50px;
+  border: solid 2px white;
+  border-radius: 50%;
   background-color: #000;
   color: #fff;
   letter-spacing: 1px;
