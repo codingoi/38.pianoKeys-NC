@@ -109,8 +109,8 @@ body{
   margin-left: 40px;
   border: solid 2px lightgray;
   border-radius: 50%;
-  background-color: #000;
-  color: #fff;
+  background-color: #fff;
+  color: #000;
   letter-spacing: 1px;
   cursor: pointer;
   display: 'block';
