@@ -101,15 +101,17 @@ body{
   margin-left: 35px;
 }
 #first-next-line, #second-next-line, #third-next-line, #fourth-next-line{
-  width: 70px;
-  height: 70px;
-  font-size: 16px;
+  width: 50px;
+  height: 50px;
+  font-size: 14px;
   position: absolute;
   margin-top: 20px;
   margin-left: 40px;
-  border: solid 2px white;
+  border: solid 2px lightgray;
+  border-radius: 50%;
   background-color: #000;
   color: #fff;
   letter-spacing: 1px;
   cursor: pointer;
+  display: 'block';
 }
