@@ -1,9 +1,8 @@
 body{
   margin: 0;
   padding: 0;
-  font-family: 'Montserrat', sans-serif;        
-  background-color: #2d3436;
-  background-image: linear-gradient(315deg, #2d3436 0%, #000000 74%);
+  font-family: 'Montserrat', sans-serif;      
+  background-color: #000;
 }
 .title{
   font-size: 36px;
@@ -107,9 +106,8 @@ body{
   font-size: 16px;
   position: absolute;
   margin-top: 20px;
-  margin-left: 50px;
+  margin-left: 40px;
   border: solid 2px white;
-  border-radius: 50%;
   background-color: #000;
   color: #fff;
   letter-spacing: 1px;
