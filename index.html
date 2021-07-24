@@ -5,7 +5,12 @@
   <meta charset="UTF-8">
   <title>Piano Player</title>
 
-  <!--Styling-->
+  
+
+  <!--Bootstrap-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+  <!--Custom Styling-->
   <link rel="stylesheet" href="style.css">
 
   <!--Style: Fonts-->
@@ -13,25 +18,74 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Zen+Tokyo+Zoo&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  
-  <!--Favicon-->
-  <link rel="icon" href="./media/favicon.ico" type="image/x-icon">
-
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
 </head>
 
 <body>
-  <!--Audio Files (not seen)-->
-  <audio id="myAudio">
-    <source src="horse.ogg" type="audio/ogg">
-    <source src="horse.mp3" type="audio/mpeg">
-  Your browser does not support the audio element.
-</audio>
 
 <!--Visable Page Content-->
-  <p class='title'>Piano Player</p>
-  <p id='demo'>Follow the song below to play  the piano.</p>
-
+  <h1 class='title'>Piano Player</h1>
+  <p id='demo'>Follow the notes, provided on the left, and select the correct keys on the piano to learn a new song.</p>
+  <section class="song">
+    <span class="song-title">Happy Birthday</span>
+    <span class="song-author">(attributed to:  Patty and Mildred J. Hill)</span>
+  </section>
+  <hr/>
+    <!-- Lyrics -->
+  <section class="lyric-bar">
+  <section id='lyrics'>
+    <p id="lyric-1">Line 1</p>
+    <p id="lyric-2">Line 2</p>
+    <p id="lyric-3">Line 3</p>
+    <p id="lyric-4">Line 4</p>
+    <section id='column-one'>
+      <section id="word-one">HAP-</section>
+      <section id="letter-note-one">G</section>
+    </section>
+    <section id='column-two'>
+      <section id="word-two">PY</section>
+      <section id="letter-note-two">G</section>
+    </section>
+    <section id='column-three'>
+      <section id="word-three">BIRTH-</section>
+      <section id="letter-note-three">A</section>
+    </section>
+    <section id='column-four'>
+      <section id="word-four">DAY</section>
+      <section id="letter-note-four">G</section>
+    </section>
+    <section id='column-five'>
+      <section id="word-five">TO</section>
+      <section id="letter-note-five"><sup>^</sup>C</section>
+    </section>
+    <section id='column-six'>
+      <section id="word-six">YOU</section>
+      <section id="letter-note-six">B</section>
+    </section>
+    <section id='column-optional' class='column-optional'>
+      <section id="word-optional">END</section>
+      <section id="letter-note-optional">A</section>
+    </section>
+    <!--Progress Buttons-->
+    <button id="first-next-line" type="button" class="btn btn-outline-dark" data-bs-toggle="tooltip" data-bs-placement="top" title="Next: Line 2"> 
+        <span class="material-icons">arrow_right_alt
+         </span>
+    </button>
+    <button id="second-next-line" type="button" class="btn btn-outline-dark" data-bs-toggle="tooltip" data-bs-placement="top" title="Next: Line 3">
+         <span class="material-icons">arrow_right_alt
+         </span>
+    </button>
+    <button id="third-next-line" type="button" class="btn btn-outline-dark" data-bs-toggle="tooltip" data-bs-placement="top" title="Next: Line 4">
+         <span class="material-icons">arrow_right_alt
+         </span>
+    </button>
+    <button id="fourth-next-line" type="button" class="btn btn-outline-dark" data-bs-toggle="tooltip" data-bs-placement="top" title="Next: Line 1">   
+      <span class="material-icons">restart_alt
+        </span>
+    </button>
+  </section>
+  </section>
   <!-- Piano Keys -->
   <section class="piano">
     <section id='c-key' class="key">
@@ -71,55 +125,20 @@
       <section class='keynote'>B</section>
     </section>
     <section id='high-c-key' class="key">
-      <div class='keynote'>C</div>
+      <div class='keynote'><sup>^</sup>C</div>
     </section>
   </section>
 
-  <!-- Lyrics -->
-  <section id='lyrics'>
-    <section id='column-one'>
-      <section id="word-one">HAP-</section>
-      <section id="letter-note-one">G</section>
-    </section>
-    <section id='column-two'>
-      <section id="word-two">PY</section>
-      <section id="letter-note-two">G</section>
-    </section>
-    <section id='column-three'>
-      <section id="word-three">BIRTH-</section>
-      <section id="letter-note-three">A</section>
-    </section>
-    <section id='column-four'>
-      <section id="word-four">DAY</section>
-      <section id="letter-note-four">G</section>
-    </section>
-    <section id='column-five'>
-      <section id="word-five">TO</section>
-      <section id="letter-note-five">C</section>
-    </section>
-    <section id='column-six'>
-      <section id="word-six">YOU</section>
-      <section id="letter-note-six">B</section>
-    </section>
-    <section id='column-optional' class='column-optional'>
-      <section id="word-optional">END</section>
-      <section id="letter-note-optional">A</section>
-    </section>
-    <button id="first-next-line">
-      <span class="material-icons">arrow_right_alt</span>
-    </button>
-    <button id="second-next-line">
-       <span class="material-icons">arrow_right_alt</span>
-    </button>
-    <button id="third-next-line">
-      <span class="material-icons">arrow_right_alt</span>
-    </button>
-    <button id="fourth-next-line">   
-      <span class="material-icons">restart_alt</span>
-    </button>
-  </section>
+<!--Recording-->
+    <button id="action" onclick="handleAction()">Start recording...</button>
 
-  <script  src="main.js"></script>
+
+
+ <!--Custom Script-->
+ <script  src="main.js"></script>
+  <!--Bootstrap-->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+ 
 
 </body>
 </html>
