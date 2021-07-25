@@ -23,4 +23,5 @@ You’re a web developer who has been hired by a music education company. This c
 
 - Create a system that guides the uer through the song. The system would:
   - Indiciate which note should be clicked, when, and how long the note should be held.
-  - Record correctly or incorrectly selected notes
+  - Record correctly or incorrectly selected notes.
+- Provide the user with a greater selection of music to learn.
