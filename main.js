@@ -158,44 +158,151 @@ startOver.onclick = function() {
 }
 
 //Script for Audio Recording
- const recordAudio = () =>
-  new Promise(async resolve => {
-    const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
-    const mediaRecorder = new MediaRecorder(stream);
-    const audioChunks = [];
 
-    mediaRecorder.addEventListener("dataavailable", event => {
-      audioChunks.push(event.data);
-    });
+var recordButton, stopButton, pauseButton, resumeButton, recorder, audioFile;
 
-    const start = () => mediaRecorder.start();
+//create variables for button or audio file
 
-    const stop = () =>
-      new Promise(resolve => {
-        mediaRecorder.addEventListener("stop", () => {
-          const audioBlob = new Blob(audioChunks);
-          const audioUrl = URL.createObjectURL(audioBlob);
-          const audio = new Audio(audioUrl);
-          const play = () => audio.play();
-          resolve({ audioBlob, audioUrl, play });
-        });
+window.onload = function() {
 
-        mediaRecorder.stop();
-      });
+    recordButton = document.getElementById('record');
 
-    resolve({ start, stop });
-  });
+    stopButton = document.getElementById('stop');
 
-const sleep = time => new Promise(resolve => setTimeout(resolve, time));
+    pauseButton = document.getElementById('pause');
 
-const handleAction = async () => {
-  const recorder = await recordAudio();
-  const actionButton = document.getElementById('action');
-  actionButton.disabled = true;
-  recorder.start();
-  await sleep(40000);
-  const audio = await recorder.stop();
-  audio.play();
-  await sleep(3000);
-  actionButton.disabled = false;
+    resumeButton = document.getElementById('resume');
+
+    // get audio stream from user's mic
+
+    navigator.mediaDevices.getUserMedia({
+
+            audio: true
+
+        })
+
+        .then(function(stream) {
+
+            recordButton.disabled = false;
+
+            stopButton.disabled = true;
+
+            pauseButton.disabled = true;
+
+            resumeButton.disabled = true;
+
+            recordButton.addEventListener('click', startRecording);
+
+            stopButton.addEventListener('click', stopRecording);
+
+            pauseButton.addEventListener('click', pauseRecording);
+
+            resumeButton.addEventListener('click', resumeRecording);
+
+            var options = {
+
+                mimeType: 'audio/webm'
+
+            }
+
+            recorder = new MediaRecorder(stream, options);
+
+            // listen to dataavailable, which gets triggered whenever we have
+
+            // an audio blob available
+
+            recorder.addEventListener('dataavailable', onRecordingReady);
+
+        }, function() {
+
+            recordButton.disabled = true;
+
+            stopButton.disabled = true;
+
+            pauseButton.disabled = true;
+
+            resumeButton.disabled = true;
+
+            $("#audioMediaNotAvailable").show();
+
+        }); // if microphone is not connected
+
+};
+
+function startRecording() {
+
+    recordButton.disabled = true;
+
+    stopButton.disabled = false;
+
+    pauseButton.disabled = false;
+
+    resumeButton.disabled = true;
+
+    recorder.start();
+
+}
+
+function pauseRecording() {
+
+    recordButton.disabled = true;
+
+    stopButton.disabled = false;
+
+    pauseButton.disabled = true;
+
+    resumeButton.disabled = false;
+
+    recorder.pause();
+
+}
+
+function resumeRecording() {
+
+    recordButton.disabled = false;
+
+    stopButton.disabled = false;
+
+    pauseButton.disabled = false;
+
+    resumeButton.disabled = true;
+
+    recorder.resume();
+
+}
+
+function stopRecording() {
+
+    recordButton.disabled = false;
+
+    stopButton.disabled = true;
+
+    pauseButton.disabled = false;
+
+    resumeButton.disabled = true;
+
+    // Stopping the recorder will eventually trigger the `dataavailable` event and we can complete the recording process
+
+    recorder.stop();
+
+   // $("#recording").hide();
+
+    $("#processing").show();
+
+}
+
+function onRecordingReady(e) {
+
+    var audio = document.getElementById('audio');
+
+    // e.data contains a blob representing the recording
+
+    audioFile = e.data;
+
+    //  var file = new File(e.data,"hello.wav");
+
+    audio.src = URL.createObjectURL(e.data);
+
+    audio.play();
+
 }
