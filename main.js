@@ -1,83 +1,124 @@
-// The keys and notes variables store the piano keys
-const keys = ['c-key', 'd-key', 'e-key', 'f-key', 'g-key', 'a-key', 'b-key', 'high-c-key', 'c-sharp-key', 'd-sharp-key', 'f-sharp-key', 'g-sharp-key', 'a-sharp-key'];
+// The keys and notes letiables store the piano keys
+const keys = [
+  'c-key',
+  'd-key',
+  'e-key',
+  'f-key',
+  'g-key',
+  'a-key',
+  'b-key',
+  'high-c-key',
+  'c-sharp-key',
+  'd-sharp-key',
+  'f-sharp-key',
+  'g-sharp-key',
+  'a-sharp-key'
+];
 const notes = [];
-keys.forEach(function(key){
-  notes.push(
-    document.getElementById(key))});
+keys.forEach(function(key) {
+  notes.push(document.getElementById(key));
+});
 
 // The audio is an object that stores the audio sound file source
 
 const audio = {
-  'c-key' : new Audio('https://freesound.org/data/previews/442/442980_9159373-lq.mp3'),
-  'c-sharp-key':new Audio('http://www.tremblingsandwarblings.com/wp-content/uploads/2017/05/piano-Cs4-long.mp3'), 
- 'd-key' : new Audio('https://freesound.org/data/previews/442/442983_9159373-lq.mp3'),
-  'd-sharp-key' : new Audio('https://freesound.org/data/previews/562/562755_7538492-lq.mp3'),
- 'e-key' : new Audio('https://freesound.org/data/previews/442/442977_9159373-lq.mp3'),
-  'f-key' : new Audio('https://freesound.org/data/previews/442/442979_9159373-lq.mp3'),
-  'f-sharp-key' : new Audio('https://freesound.org/data/previews/562/562762_7538492-lq.mp3'),
-  'g-key' : new Audio('https://freesound.org/data/previews/442/442981_9159373-lq.mp3'),
-  'g-sharp-key' : new Audio('https://freesound.org/data/previews/562/562763_7538492-lq.mp3'),
-  'a-key' : new Audio('https://freesound.org/data/previews/442/442978_9159373-lq.mp3'),
-  'a-sharp-key' : new Audio('https://freesound.org/data/previews/562/562753_7538492-lq.mp3'),
-  'b-key' : new Audio('https://freesound.org/data/previews/442/442982_9159373-lq.mp3'),
-  'high-c-key': new Audio('https://freesound.org/data/previews/442/442984_9159373-lq.mp3'),
-}
-
+  'c-key': new Audio(
+    'https://freesound.org/data/previews/442/442980_9159373-lq.mp3'
+  ),
+  'c-sharp-key': new Audio(
+    'http://www.tremblingsandwarblings.com/wp-content/uploads/2017/05/piano-Cs4-long.mp3'
+  ),
+  'd-key': new Audio(
+    'https://freesound.org/data/previews/442/442983_9159373-lq.mp3'
+  ),
+  'd-sharp-key': new Audio(
+    'https://freesound.org/data/previews/562/562755_7538492-lq.mp3'
+  ),
+  'e-key': new Audio(
+    'https://freesound.org/data/previews/442/442977_9159373-lq.mp3'
+  ),
+  'f-key': new Audio(
+    'https://freesound.org/data/previews/442/442979_9159373-lq.mp3'
+  ),
+  'f-sharp-key': new Audio(
+    'https://freesound.org/data/previews/562/562762_7538492-lq.mp3'
+  ),
+  'g-key': new Audio(
+    'https://freesound.org/data/previews/442/442981_9159373-lq.mp3'
+  ),
+  'g-sharp-key': new Audio(
+    'https://freesound.org/data/previews/562/562763_7538492-lq.mp3'
+  ),
+  'a-key': new Audio(
+    'https://freesound.org/data/previews/442/442978_9159373-lq.mp3'
+  ),
+  'a-sharp-key': new Audio(
+    'https://freesound.org/data/previews/562/562753_7538492-lq.mp3'
+  ),
+  'b-key': new Audio(
+    'https://freesound.org/data/previews/442/442982_9159373-lq.mp3'
+  ),
+  'high-c-key': new Audio(
+    'https://freesound.org/data/previews/442/442984_9159373-lq.mp3'
+  )
+};
 
 // Functions that change the color of the keys clicked on
 
 const keyPlay = function(event) {
-  console.log("Style", event.target.style)
+  console.log('Style', event.target.style);
   event.target.style.background = 'rgb(255,121,9)';
   //event.target.style.background: 'linear-gradient(red, yellow, blue)';
   let keyNote = event.target.id || event.target.parentElement.id;
   audio[keyNote].play();
-}
+};
 
-const keyReturn = function (event) {
+const keyReturn = function(event) {
   event.target.style.backgroundColor = '';
   let keyNote = event.target.id || event.target.parentElement.id;
   audio[keyNote].pause();
   audio[keyNote].currentTime = 0;
-}
+};
 
 // Function with event handler properties
 
 let eventAssignment = function(note) {
-  note.onmousedown = function() {keyPlay(event)}
-  note.onmouseup = function() {keyReturn(event)}
-}
+  note.onmousedown = function() {
+    keyPlay(event);
+  };
+  note.onmouseup = function() {
+    keyReturn(event);
+  };
+};
 
 // A loop that runs the array elements through the function
 notes.forEach(eventAssignment);
 
-// These variables store the buttons that progress the user through the lyrics
+// These letiables store the buttons that progress the user through the lyrics
 let nextOne = document.getElementById('first-next-line');
 let nextTwo = document.getElementById('second-next-line');
 let nextThree = document.getElementById('third-next-line');
 let startOver = document.getElementById('fourth-next-line');
 
-// These variables store the text that indicates progression through the lyrics/lines
+// These letiables store the text that indicates progression through the lyrics/lines
 let lyric1 = document.getElementById('lyric-1');
 let lyric2 = document.getElementById('lyric-2');
 let lyric3 = document.getElementById('lyric-3');
 let lyric4 = document.getElementById('lyric-4');
 
-
-// This variable stores the '-END' lyric element
+// This letiable stores the '-END' lyric element
 let lastLyric = document.getElementById('column-optional');
 
 // These statements are "hiding" all the progress buttons, but the first one
 nextTwo.hidden = true; //Displays "line 3" when visible
 nextThree.hidden = true; //Displays "line 4" when visible
-startOver.hidden= true; //Displays "Reset" when visible
+startOver.hidden = true; //Displays "Reset" when visible
 
 // These statements are "hiding" all the text that shows progression through the lyric/lines, but the first one
 lyric2.hidden = true;
 lyric3.hidden = true;
 lyric3.hidden = true;
 lyric4.hidden = true;
-
 
 // Event handler property and function for the first progress button
 nextOne.onclick = function(event) {
@@ -89,8 +130,7 @@ nextOne.onclick = function(event) {
   //Changes notes to play
   document.getElementById('letter-note-five').innerHTML = 'D';
   document.getElementById('letter-note-six').innerHTML = 'C';
-}
-
+};
 
 // Event handler property and function for the second progress button
 nextTwo.onclick = function(event) {
@@ -106,9 +146,9 @@ nextTwo.onclick = function(event) {
   //Changes notes to play
   document.getElementById('letter-note-three').innerHTML = 'G';
   document.getElementById('letter-note-four').innerHTML = 'E';
-   document.getElementById('letter-note-five').innerHTML = '<sup>^</sup>C';
+  document.getElementById('letter-note-five').innerHTML = '<sup>^</sup>C';
   document.getElementById('letter-note-six').innerHTML = 'B';
-}
+};
 
 // Event handler property and function for the third progress button
 nextThree.onclick = function(event) {
@@ -132,7 +172,7 @@ nextThree.onclick = function(event) {
   document.getElementById('letter-note-four').innerHTML = 'C';
   document.getElementById('letter-note-five').innerHTML = 'D';
   document.getElementById('letter-note-six').innerHTML = 'C';
-}
+};
 
 // Event handler property and function for the startOver ("Reset") button
 startOver.onclick = function() {
@@ -155,154 +195,138 @@ startOver.onclick = function() {
   document.getElementById('letter-note-four').innerHTML = 'G';
   document.getElementById('letter-note-five').innerHTML = '<sup>^</sup>C';
   document.getElementById('letter-note-six').innerHTML = 'B';
-}
+};
 
 //Script for Audio Recording
 
-var recordButton, stopButton, pauseButton, resumeButton, recorder, audioFile;
+let recordButton, stopButton, pauseButton, resumeButton, recorder, audioFile;
 
-//create variables for button or audio file
+//create letiables for button or audio file
 
 window.onload = function() {
+  recordButton = document.getElementById('record');
 
-    recordButton = document.getElementById('record');
+  stopButton = document.getElementById('stop');
 
-    stopButton = document.getElementById('stop');
+  pauseButton = document.getElementById('pause');
 
-    pauseButton = document.getElementById('pause');
+  resumeButton = document.getElementById('resume');
 
-    resumeButton = document.getElementById('resume');
+  // get audio stream from user's mic
 
-    // get audio stream from user's mic
+  navigator.mediaDevices
+    .getUserMedia({
+      audio: true
+    })
 
-    navigator.mediaDevices.getUserMedia({
+    .then(
+      function(stream) {
+        recordButton.disabled = false;
 
-            audio: true
+        stopButton.disabled = true;
 
-        })
+        pauseButton.disabled = true;
 
-        .then(function(stream) {
+        resumeButton.disabled = true;
 
-            recordButton.disabled = false;
+        recordButton.addEventListener('click', startRecording);
 
-            stopButton.disabled = true;
+        stopButton.addEventListener('click', stopRecording);
 
-            pauseButton.disabled = true;
+        pauseButton.addEventListener('click', pauseRecording);
 
-            resumeButton.disabled = true;
+        resumeButton.addEventListener('click', resumeRecording);
 
-            recordButton.addEventListener('click', startRecording);
+        let options = {
+          mimeType: 'audio/webm'
+        };
 
-            stopButton.addEventListener('click', stopRecording);
+        recorder = new MediaRecorder(stream, options);
 
-            pauseButton.addEventListener('click', pauseRecording);
+        // listen to dataavailable, which gets triggered whenever we have
 
-            resumeButton.addEventListener('click', resumeRecording);
+        // an audio blob available
 
-            var options = {
+        recorder.addEventListener('dataavailable', onRecordingReady);
+      },
+      function() {
+        recordButton.disabled = true;
 
-                mimeType: 'audio/webm'
+        stopButton.disabled = true;
 
-            }
+        pauseButton.disabled = true;
 
-            recorder = new MediaRecorder(stream, options);
+        resumeButton.disabled = true;
 
-            // listen to dataavailable, which gets triggered whenever we have
-
-            // an audio blob available
-
-            recorder.addEventListener('dataavailable', onRecordingReady);
-
-        }, function() {
-
-            recordButton.disabled = true;
-
-            stopButton.disabled = true;
-
-            pauseButton.disabled = true;
-
-            resumeButton.disabled = true;
-
-            $("#audioMediaNotAvailable").show();
-
-        }); // if microphone is not connected
-
+        $('#audioMediaNotAvailable').show();
+      }
+    ); // if microphone is not connected
 };
 
 function startRecording() {
+  recordButton.disabled = true;
 
-    recordButton.disabled = true;
+  stopButton.disabled = false;
 
-    stopButton.disabled = false;
+  pauseButton.disabled = false;
 
-    pauseButton.disabled = false;
+  resumeButton.disabled = true;
 
-    resumeButton.disabled = true;
-
-    recorder.start();
-
+  recorder.start();
 }
 
 function pauseRecording() {
+  recordButton.disabled = true;
 
-    recordButton.disabled = true;
+  stopButton.disabled = false;
 
-    stopButton.disabled = false;
+  pauseButton.disabled = true;
 
-    pauseButton.disabled = true;
+  resumeButton.disabled = false;
 
-    resumeButton.disabled = false;
-
-    recorder.pause();
-
+  recorder.pause();
 }
 
 function resumeRecording() {
+  recordButton.disabled = false;
 
-    recordButton.disabled = false;
+  stopButton.disabled = false;
 
-    stopButton.disabled = false;
+  pauseButton.disabled = false;
 
-    pauseButton.disabled = false;
+  resumeButton.disabled = true;
 
-    resumeButton.disabled = true;
-
-    recorder.resume();
-
+  recorder.resume();
 }
 
 function stopRecording() {
+  recordButton.disabled = false;
 
-    recordButton.disabled = false;
+  stopButton.disabled = true;
 
-    stopButton.disabled = true;
+  pauseButton.disabled = false;
 
-    pauseButton.disabled = false;
+  resumeButton.disabled = true;
 
-    resumeButton.disabled = true;
+  // Stopping the recorder will eventually trigger the `dataavailable` event and we can complete the recording process
 
-    // Stopping the recorder will eventually trigger the `dataavailable` event and we can complete the recording process
+  recorder.stop();
 
-    recorder.stop();
+  // $("#recording").hide();
 
-   // $("#recording").hide();
-
-    $("#processing").show();
-
+  $('#processing').show();
 }
 
 function onRecordingReady(e) {
+  let audio = document.getElementById('audio');
 
-    var audio = document.getElementById('audio');
+  // e.data contains a blob representing the recording
 
-    // e.data contains a blob representing the recording
+  audioFile = e.data;
 
-    audioFile = e.data;
+  //  let file = new File(e.data,"hello.wav");
 
-    //  var file = new File(e.data,"hello.wav");
+  audio.src = URL.createObjectURL(e.data);
 
-    audio.src = URL.createObjectURL(e.data);
-
-    audio.play();
-
+  audio.play();
 }
