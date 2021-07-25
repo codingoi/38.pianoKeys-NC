@@ -31,19 +31,16 @@ body{
 }
 #demo{
   text-align: center;
-  font-size: 16px;
-  margin: 10px auto;
+  font-size: 14px;
+  margin: 20px auto;
   color: #000;
   letter-spacing: 1px;
   width: 80%;
 }
 .piano{
-  width: 40%;
   height: 210px;
-  display: inline-block;
-  /*margin: 15px auto;*/
-  vertical-align: top;
-  
+  margin-top: 25px;
+  margin-bottom: 15px;
 }
 .key{
   width: 30px;
@@ -82,17 +79,13 @@ body{
   margin-top: 75px;
   font-family: sans-serif;
 }
-.lyric-bar {
-  width: 55%;
-  display: inline-block;
-  vertical-align: top;
-}
+
 #lyrics{
-  width: 90%;
-  min-height: 210px;
+  width: 100%;
   display: block;
-  margin: 0 auto;
-  padding: 0 30px;
+  margin-left: auto;
+  margin-right: auto;
+  /*padding: 0 30px;*/
   /*margin-top: 50px;*/
   /*background-color: #fd4d3f;*/
   /*border: dashed grey 1px;*/
@@ -101,10 +94,13 @@ body{
 #lyric-1, #lyric-2, #lyric-3, #lyric-4{
   font-size: 12px;
   font-weight: bold;
-  margin-top: 10px;
+  margin-top: 6px;
+  text-align: center;
+  text-transform: uppercase;
+  color: rgb(56, 56, 56)
 }
-#column-one, #column-two, #column-three, #column-four, #column-five, #column-six, #column-optional{
-  width: 90px;
+#column-one, #column-two, #column-three, #column-four, #column-five, #column-six, #column-arrow, #column-optional{
+  width: 13%;
   display: inline-block;
   text-align: center;
   /*margin-top: 30px;*/
@@ -114,9 +110,9 @@ body{
 }
 #word-one, #word-two, #word-three, #word-four, #word-five, #word-six, #word-optional{
   background-color: white;
-  width: 90px;
+  width: 100%;
   height: auto;
-  padding-top: 10px;
+  padding-top: 6px;
   letter-spacing: 5px;
   color: #000;
   font-weight: bold;
@@ -130,16 +126,17 @@ body{
 }
 #first-next-line, #second-next-line, #third-next-line, #fourth-next-line{
   /*position: absolute;*/
-  margin: 10px 0 0 auto;
+ /* margin: 10px  auto;*/
   cursor: pointer;
   display: 'block';
   border: 0;
-  width: 100%;
+  width: 20%;
   height: 40px;
 }
 
 #first-next-line:hover, #second-next-line:hover, #third-next-line:hover, #fourth-next-line:hover {
-  background-color: #ff7909;
+  color: #ff7909;
+  background-color: white;
 }
 
 .recording {
@@ -149,10 +146,10 @@ body{
 }
 .record {
   display: inline-block;
-  vertical-align: tope;
+  vertical-align: top;
   margin-top: 10px;
   font-size: 12px;
-  width: 22%;
+  width: 17%;
 }
 
 .inlineBlock {
@@ -164,7 +161,3 @@ body{
 width: 100%;
 }
 
-audio::-webkit-media-controls-play-button,
-audio::-webkit-media-controls-panel {
- border: solid gray 1px;
-}
