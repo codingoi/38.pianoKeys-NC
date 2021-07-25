@@ -68,6 +68,7 @@
       <section id="letter-note-optional">A</section>
     </section>
     <!--Progress Buttons-->
+    <div class="right-align">
     <button id="first-next-line" type="button" class="btn btn-outline-dark" data-bs-toggle="tooltip" data-bs-placement="top" title="Next: Line 2"> 
         <span class="material-icons">arrow_right_alt
          </span>
@@ -84,6 +85,7 @@
       <span class="material-icons">restart_alt
         </span>
     </button>
+    </div>
   </section>
   </section>
   <!-- Piano Keys -->
@@ -128,9 +130,57 @@
       <div class='keynote'><sup>^</sup>C</div>
     </section>
   </section>
-
+  <hr/>
 <!--Recording-->
-    <button id="action" onclick="handleAction()">Start recording...</button>
+<section class="recording">
+   <div class="form-group">
+
+   <div id="audioMediaNotAvailable" style="display: none;">
+
+      Microphone not found
+
+   </div>
+
+   <div id="recording">
+       <button id="record" type="button" class="btn btn-success record inline-block"  disabled>
+         <span class="material-icons inlineBlock">mic </span>
+         <span class="inlineBlock">Start</span>
+      </button>
+
+    <button id="pause" type="button" class="btn btn-dark record inline-block">
+
+         <span class="material-icons inlineBlock">pause </span>
+          <span class="inlineBlock">Pause</span>
+
+      </button>
+    <button id="resume" type="button" class="btn btn-warning record">
+         <span class="material-icons inlineBlock">play_arrow
+         </span>
+         <span class="inlineBlock">Resume</span>
+      </button>
+<button id="stop" type="button" class="btn btn-danger record" onclick="handleAction('stop')">
+      
+
+                  <span class="material-icons inlineBlock">stop_circle
+         </span>
+         <span class="inlineBlock">Stop</span>
+
+      </button>
+
+   </div>
+
+   <div id="processing" class="inline-block">
+
+      <div>
+
+        <audio id="audio" controls></audio>
+
+      </div>
+
+   </div>
+
+</div>
+</section>
 
 
 
