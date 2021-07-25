@@ -10,13 +10,14 @@ You’re a web developer who has been hired by a music education company. This c
 - The user has the option of granting the webpage microphone permission. With granted permission, the user can record themselves playing "Happy "Birthday". 
   - The user can listen to their recording via the webpage or download their recording in order to listen to it locally.  
 
-![SCreenshot of the Piano Keys Webpage](./pianoPlayer.png)
+![Screenshot of the Piano Keys Webpage](./pianoPlayer.png)
 
 ### Intent for Version 2
 
 - Convert from relatively static to more dynamic
   - Provide the user with the option to click on the piano keys or use their keyboard to select appropriate notes. 
-- Modify the appearance of the audio controls
+- Modify the appearance of the audio controls.
+- Adjust the layout of the keyboard for more accessibility
 
 ### Intent for Version 3
 
