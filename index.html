@@ -12,7 +12,7 @@
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
   <!--Custom Styling-->
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="styles.css">
 
   <!--Style: Fonts-->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -27,7 +27,7 @@
   <!--Visable Page Content-->
 
   <!--Header-->
-  <div class="container">
+  <div class="container-fluid">
     <header class="row">
       <div class="col-4">
         <h1 class='title'>The Piano Player</h1>
@@ -36,147 +36,122 @@
         <p id='demo'>Follow the notes, provided on the below, and select the correct keys on the piano to learn a new
           song.</p>
       </div>
-      <hr />
     </header>
 
     <!--Song Information-->
     <section class="row">
       <section class="song">
-        <span class="song-title">Happy Birthday</span>
-        <span class="song-author">(attributed to:  Patty and Mildred J. Hill)</span>
+        <hr/>
+        <div class="song-title">Happy Birthday</div>
+        <div class="song-author">(attributed to: Patty and Mildred J. Hill)</div>
       </section>
-      <hr />
     </section>
 
     <!-- Lyrics -->
 
-    <section id='lyrics row'>
+    <section class="lines">
+      <hr />
       <p id="lyric-1">Line 1</p>
       <p id="lyric-2">Line 2</p>
       <p id="lyric-3">Line 3</p>
       <p id="lyric-4">Line 4</p>
-      <div class="col-2"></div>
-      <section id='column-one' class="col">
+    </section>
+
+    <section id='lyrics'>
+      <section id='column-one'>
         <section id="word-one">HAP-</section>
         <section id="letter-note-one">G</section>
       </section>
-      <section id='column-two' class="col">
+      <section id='column-two'>
         <section id="word-two">PY</section>
         <section id="letter-note-two">G</section>
       </section>
-      <section id='column-three' class="col">
+      <section id='column-three'>
         <section id="word-three">BIRTH-</section>
         <section id="letter-note-three">A</section>
       </section>
-      <section id='column-four' class="col">
+      <section id='column-four'>
         <section id="word-four">DAY</section>
         <section id="letter-note-four">G</section>
       </section>
-      <section id='column-five' class="col">
+      <section id='column-five'>
         <section id="word-five">TO</section>
         <section id="letter-note-five"><sup>^</sup>C</section>
       </section>
-      <section id='column-six' class="col" >
+      <section id='column-six'>
         <section id="word-six">YOU</section>
         <section id="letter-note-six">B</section>
       </section>
-      <section id='column-optional' class='column-optional col'>
+      <section id='column-optional' class='column-optional'>
         <section id="word-optional">END</section>
         <section id="letter-note-optional">A</section>
       </section>
-      <section id='column-arrow' class="col" >
-
-             <section clas="row">
-
-               <!--Progress Btns-->
-        <button id="first-next-line" type="button" class="btn btn-outline-dark align-middle" data-bs-toggle="tooltip" data-bs-placement="top" title="Next: Line 2">
-            <span class="material-icons">arrow_right_alt</span>
-          </button>
-        <button id="second-next-line" type="button" class="btn btn-outline-dark mx-auto" data-bs-toggle="tooltip" data-bs-placement="top" title="Next: Line 3">
-            <span class="material-icons">arrow_right_alt</span>
-          </button>
-        <button id="third-next-line" type="button" class="btn btn-outline-dark mx-auto" data-bs-toggle="tooltip" data-bs-placement="top" title="Next: Line 4">
-            <span class="material-icons">arrow_right_alt</span>
-          </button>
-        <button id="fourth-next-line" type="button" class="btn btn-outline-dark mx-auto" data-bs-toggle="tooltip" data-bs-placement="top" title="Start Over">
-            <span class="material-icons">restart_alt</span>
-          </button>
     </section>
-      </section>
-      <div class="col-2"></div>
-</section>
 
-      <!--Redundent Progress Buttons-->
-      <!--<section clas="row">
-        <button id="first-next-line" type="button" class="btn btn-outline-dark align-middle" data-bs-toggle="tooltip" data-bs-placement="top" title="Next: Line 2">
-            <span class="material-icons">arrow_right_alt</span>
-          </button>
-        <button id="second-next-line" type="button" class="btn btn-outline-dark mx-auto" data-bs-toggle="tooltip" data-bs-placement="top" title="Next: Line 3">
-            <span class="material-icons">arrow_right_alt</span>
-          </button>
-        <button id="third-next-line" type="button" class="btn btn-outline-dark mx-auto" data-bs-toggle="tooltip" data-bs-placement="top" title="Next: Line 4">
-            <span class="material-icons">arrow_right_alt</span>
-          </button>
-        <button id="fourth-next-line" type="button" class="btn btn-outline-dark mx-auto" data-bs-toggle="tooltip" data-bs-placement="top" title="Start Over">
-            <span class="material-icons">restart_alt</span>
-          </button>
-    </section>-->
-    <hr />
+    <!--Progress Buttons-->
+    <div class="row">
+      <button id="first-next-line" type="button" class="btn btn-outline-dark mx-auto mt-3" data-bs-toggle="tooltip" data-bs-placement="top" title="Next: Line 2">
+      <span class="material-icons">arrow_right_alt</span>
+    </button>
+      <button id="second-next-line" type="button" class="btn btn-outline-dark mx-auto mt-3" data-bs-toggle="tooltip" data-bs-placement="top" title="Next: Line 3">
+      <span class="material-icons">arrow_right_alt</span>
+    </button>
+      <button id="third-next-line" type="button" class="btn btn-outline-dark mx-auto mt-3" data-bs-toggle="tooltip" data-bs-placement="top" title="Next: Line 4">
+      <span class="material-icons">arrow_right_alt</span>
+    </button>
+      <button id="fourth-next-line" type="button" class="btn btn-outline-dark mx-auto mt-3" data-bs-toggle="tooltip" data-bs-placement="top" title="Start Over">
+      <span class="material-icons">restart_alt</span>
+    </button>
+    </div>
 
 
 
     <!-- Piano Keys -->
-    <section class="row">
-      <div class="col-2"></div>
-      <section class="piano col-8">
-        <section id='c-key' class="key">
-          <section class='keynote'>C</section>
-        </section>
-        <section id='c-sharp-key' class="black-key">
-          <section class='black-keynote'>C#</section>
-        </section>
-        <section id='d-key' class="key">
-          <section class='keynote'>D</section>
-        </section>
-        <section id='d-sharp-key' class="black-key">
-          <section class='black-keynote'>D#</section>
-        </section>
-        <section id='e-key' class="key">
-          <section class='keynote'>E</section>
-        </section>
-        <section id='f-key' class="key">
-          <section class='keynote'>F</section>
-        </section>
-        <section id='f-sharp-key' class="black-key">
-          <section class='black-keynote'>F#</section>
-        </section>
-        <section id='g-key' class="key">
-          <section class='keynote'>G</section>
-        </section>
-        <section id='g-sharp-key' class="black-key">
-          <section class='black-keynote'>G#</section>
-        </section>
-        <section id='a-key' class="key">
-          <section class='keynote'>A</section>
-        </section>
-        <section id='a-sharp-key' class="black-key">
-          <section class='black-keynote'>A#</section>
-        </section>
-        <section id='b-key' class="key">
-          <section class='keynote'>B</section>
-        </section>
-        <section id='high-c-key' class="key">
-          <div class='keynote'><sup>^</sup>C</div>
-        </section>
+    <section class="piano">
+      <section id='c-key' class="key">
+        <section class='keynote'>C</section>
       </section>
-      <div class="col-2"></div>
+      <section id='c-sharp-key' class="black-key">
+        <section class='black-keynote'>C#</section>
+      </section>
+      <section id='d-key' class="key">
+        <section class='keynote'>D</section>
+      </section>
+      <section id='d-sharp-key' class="black-key">
+        <section class='black-keynote'>D#</section>
+      </section>
+      <section id='e-key' class="key">
+        <section class='keynote'>E</section>
+      </section>
+      <section id='f-key' class="key">
+        <section class='keynote'>F</section>
+      </section>
+      <section id='f-sharp-key' class="black-key">
+        <section class='black-keynote'>F#</section>
+      </section>
+      <section id='g-key' class="key">
+        <section class='keynote'>G</section>
+      </section>
+      <section id='g-sharp-key' class="black-key">
+        <section class='black-keynote'>G#</section>
+      </section>
+      <section id='a-key' class="key">
+        <section class='keynote'>A</section>
+      </section>
+      <section id='a-sharp-key' class="black-key">
+        <section class='black-keynote'>A#</section>
+      </section>
+      <section id='b-key' class="key">
+        <section class='keynote'>B</section>
+      </section>
+      <section id='high-c-key' class="key">
+        <div class='keynote'><sup>^</sup>C</div>
+      </section>
     </section>
-    <hr />
 
 
     <!--Recording-->
-    <section class="recording row">
-      <div class="form-group col mx-auto d-block">
+    <section class="recording row mx-auto">
 
         <div id="audioMediaNotAvailable" style="display: none;">
           Microphone not found
@@ -184,7 +159,7 @@
 
         <!--Recording Controls-->
         <div id="recording">
-          
+
           <!--Start Record Button-->
           <button id="record" type="button" class="btn btn-success record"  disabled>
             <span class="material-icons inlineBlock">mic </span>
@@ -196,7 +171,7 @@
             <span class="material-icons inlineBlock">pause </span>
             <span class="inlineBlock">Pause</span>
           </button>
-        
+
           <!--Pause Recording Button-->
           <button id="resume" type="button" class="btn btn-warning record">
             <span class="material-icons inlineBlock">play_arrow</span>
@@ -208,7 +183,7 @@
             <span class="material-icons inlineBlock">stop_circle</span>
             <span class="inlineBlock">Stop</span>
           </button>
-          
+
           <div id="processing" class="record">
             <div>
               <audio id="audio" controls></audio>
@@ -216,7 +191,6 @@
           </div>
 
         </div>
-      </div>
     </section>
   </div>
 
